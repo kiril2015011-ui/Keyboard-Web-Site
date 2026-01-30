@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Бесплатная Клавиатура</title>
+
+    <style>
+
+        body {
+            justify-items: center;
+            background: linear-gradient(45deg, deepskyblue, skyblue, deepskyblue);
+            height: 100vh;
+            padding: 0;
+        }
+
+        #Input {
+            width: 500px;
+            height: 100px;
+            font-size: 20px;
+        }
+
+        #Probel {
+            width: 200px;
+            height: 20px;
+        }
+
+        #btn {
+            width: 10px;
+            height: 15px;
+        }
+
+        .DisplayAll {
+            justify-items: center;
+            border: 5px solid black;
+            border-radius: 15px;
+            padding: 20px;
+            background: linear-gradient(to right, red, blue);
+            margin: 10px;
+        }
+
+        .DisplayAll input {
+            margin: 10px;
+            margin-left: 550px;
+            background: black;
+            color: white;
+        }
+
+        .DisplayAll button {
+            background: black;
+            color: white;
+            padding: 20px;
+            margin: 1px;
+        }
+
+        .Setting {
+            background: gray;
+            padding: 30px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .Setting button {
+            margin: 10px;
+        }
+
+        .Setting h1 {
+            color: white;
+            text-align: center;
+        }
+
+        #OnBtn {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+<h1>Привет Я Агуша</h1>
+
+<button id="OnBtn" onclick="Typing('On')">Нажми Чтобы Появилась Кравиатура!</button>
+
+<div class="Setting">
+    <h1>Setting</h1>
+    <button onclick="Typing('Admin')">Admin</button>
+    <button onclick="Tema('true')">Изменить тему</button>
+    <button onclick="Tema('false')">Убрать тему</button>
+</div>
+
+<div class="DisplayAll" id="DisplayAll">
+
+    <input readonly placeholder="Нажмите на кнопки чтобы напечатать..." id="Input">
+
+    <div>
+        <button onclick="Esc('true')">esc</button>
+        <button onclick="Esc('false')">esc</button>
+        <button>F1</button>
+        <button>F2</button>
+        <button>F3</button>
+        <button>F4</button>
+        <button>F5</button>
+        <button>F6</button>
+        <button>F7</button>
+        <button>F8</button>
+        <button>F9</button>
+        <button>F10</button>
+        <button>F11</button>
+        <button>F12</button>
+        <button id="btn"></button>
+    </div>
+
+    <div>
+        <button onclick="Typing('`')">`</button>
+        <button onclick="Typing('~')">~</button>
+        <button onclick="Typing('1')">1</button>
+        <button onclick="Typing('!')">!</button>
+        <button onclick="Typing('2')">2</button>
+        <button onclick="Typing('@')">@</button>
+        <button onclick="Typing('3')">3</button>
+        <button onclick="Typing('#')">#</button>
+        <button onclick="Typing('4')">4</button>
+        <button onclick="Typing('$')">$</button>
+        <button onclick="Typing('5')">5</button>
+        <button onclick="Typing('%')">%</button>
+        <button onclick="Typing('6')">6</button>
+        <button onclick="Typing('^')">^</button>
+        <button onclick="Typing('7')">7</button>
+        <button onclick="Typing('&')">&</button>
+        <button onclick="Typing('8')">8</button>
+        <button onclick="Typing('*')">*</button>
+        <button onclick="Typing('9')">9</button>
+        <button onclick="Typing('(')">(</button>
+        <button onclick="Typing('0')">0</button>
+        <button onclick="Typing(')')">)</button>
+        <button onclick="Typing('-')">-</button>
+        <button onclick="Typing('_')">_</button>
+        <button onclick="Typing('=')">=</button>
+        <button onclick="Typing('+')">+</button>
+        <button onclick="Typing('delete')">delete</button>
+    </div>
+
+    <div>
+        <button>tab</button>
+        <button onclick="Typing('q')">q</button>
+        <button onclick="Typing('w')">w</button>
+        <button onclick="Typing('e')">e</button>
+        <button onclick="Typing('r')">r</button>
+        <button onclick="Typing('t')">t</button>
+        <button onclick="Typing('y')">y</button>
+        <button onclick="Typing('u')">u</button>
+        <button onclick="Typing('i')">i</button>
+        <button onclick="Typing('o')">o</button>
+        <button onclick="Typing('p')">p</button>
+        <button onclick="Typing('[')">[</button>
+        <button onclick="Typing(']')">]</button>
+        <button onclick="Typing('{')">{</button>
+        <button onclick="Typing('}')">}</button>
+        <button onclick="Typing('|')">|</button>
+    </div>
+
+    <div>
+        <button>caps lock</button>
+        <button onclick="Typing('a')">a</button>
+        <button onclick="Typing('s')">s</button>
+        <button onclick="Typing('d')">d</button>
+        <button onclick="Typing('f')">f</button>
+        <button onclick="Typing('g')">g</button>
+        <button onclick="Typing('h')">h</button>
+        <button onclick="Typing('j')">j</button>
+        <button onclick="Typing('k')">k</button>
+        <button onclick="Typing('l')">l</button>
+        <button onclick="Typing(';')">;</button>
+        <button onclick="Typing(':')">:</button>
+        <button onclick="Typing('{null}')">'</button>
+        <button onclick="Typing('{null}')">"</button>
+        <button>return</button>
+    </div>
+
+    <div>
+        <button>shift</button>
+        <button onclick="Typing('z')">z</button>
+        <button onclick="Typing('x')">x</button>
+        <button onclick="Typing('c')">c</button>
+        <button onclick="Typing('v')">v</button>
+        <button onclick="Typing('b')">b</button>
+        <button onclick="Typing('n')">n</button>
+        <button onclick="Typing('m')">m</button>
+        <button onclick="Typing(',')">,</button>
+        <button onclick="Typing('<')"><</button>
+        <button onclick="Typing('.')">.</button>
+        <button onclick="Typing('>')">></button>
+        <button onclick="Typing('/')">/</button>
+        <button onclick="Typing('?')">?</button>
+        <button>shift</button>
+    </div>
+
+    <div>
+        <button onclick="Typing('Fn')">fn</button>
+        <button>control</button>
+        <button>option</button>
+        <button>command</button>
+        <button id="Probel" onclick="Typing(' ')"></button>
+        <button>command</button>
+        <button>option</button>
+        <button onclick="Typing('FnF')">fn</button>
+    </div>
+
+</div>
+
+<script src="Js.js"></script>
+</body>
+</html>
